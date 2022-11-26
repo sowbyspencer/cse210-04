@@ -33,6 +33,7 @@ classDiagram
   class __main__{
 
   }
+  __main__ --> Director : initiates
   class Actor{
     
   }
@@ -55,12 +56,18 @@ classDiagram
   class KeyboardService{
     
   }
+  KeyboardService --> Point : uses
+  KeyboardService --> Actor : controls one
   class VideoService{
     
   }
+  VideoService --> Cast : draws
   class Director{
     
   }
+  Director --> KeyboardService : uses
+  Director --> VideoService : uses
+  Director --> Cast : directs
 ```
 
 ## Required Technologies
