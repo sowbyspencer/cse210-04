@@ -37,6 +37,9 @@ classDiagram
   class Actor{
     
   }
+  __main__ <--> VideoService : initiates
+  __main__ <--> KeyboardService : initiates
+  __main__ <--> Cast : creates
   Actor --> Color : uses
   Actor --> Point : uses
   class Artifact{
@@ -65,7 +68,7 @@ classDiagram
   class Director{
     
   }
-  Director --> KeyboardService : uses
+  Director <--> KeyboardService : uses
   Director --> VideoService : uses
   Director --> Cast : directs
 ```
