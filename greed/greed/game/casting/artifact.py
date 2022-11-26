@@ -12,7 +12,11 @@ class Artifact(Actor):
         """Constructs a new Artifact"""
         super().__init__()
 
-    def calculate_points(self): 
+    def calculate_points(self):
+        """
+        This function takes in an artifact object and returns the points associated with that artifact
+        :return: The points that the artifact is worth.
+        """
         
         points = 0
 

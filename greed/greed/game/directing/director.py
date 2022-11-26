@@ -48,15 +48,18 @@ class Director:
         Args:
             cast (Cast): The cast of actors.
         """
+        # Getting the first actor from the cast with the name "banners", "robots", and "artifacts".
         banner = cast.get_first_actor("banners")
         robot = cast.get_first_actor("robots")
         artifacts = cast.get_actors("artifacts")
 
+        # Getting the max x and y values from the video service and then using them to move the robot.
         max_x = self._video_service.get_width()
         max_y = self._video_service.get_height()
         robot.move_next(max_x, max_y)
         
         for artifact in artifacts:
+            # Checking if the robot is in the same position as the artifact.
             if robot.get_position().equals(artifact.get_position()):
                 self._points += artifact.calculate_points()
                 cast.remove_actor("artifacts", artifact)
