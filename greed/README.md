@@ -30,68 +30,37 @@ root                    (project root folder)
 
 ```mermaid
 classDiagram
-Actor <|-- Artifact
-class __main__{
-  +String beakColor
-  +swim()
-  +quack()
+  class __main__{
+
   }
-class Actor{
-  -int sizeInFeet
-  -_text
-  -_font_size
-  -_color
-  -_position
-  -_velocity
-  +get_color()Color
-  +get_font_size()int
-  +get_position()Point
-  +get_text()str
-  +get_velocity()Point
-  +move_next(int, int)void
-  +set_solor(Color)void
-  +set_position(Point)void
-  +set_font_size(int)void
-  +set_text(str)void
-  +set_velocity(Point)void
+  class Actor{
+    
   }
-class Artifact{
-  +calculate_points()int
+  Actor --> Color : uses
+  Actor --> Point : uses
+  class Artifact{
+    
   }
-class Color{
-  -_red
-  -_green
-  -_blue
-  -_alpha
-  +to_tuple()Color
-}
-class Cast{
-  
-}
-class Point{
-  
-}
-class KeyboardService{
-  
-}
-class VideoService{
-  
-}
-class Director{
-  
-}
-__main__ --o Cast : creates an empty Cast
-__main__ --o Actor : creates an Actor named banner
-__main__ --o Actor : creates an Actor named robot
-__main__ --o Artifact : creates list of Artifacts
-Actor --o Color : import
-Actor --o Point : import
-Artifact --o Actor : import
-Cast --o Actor : is a list of
-KeyboardService --o Point : import
-__main__ --o KeyboardService : uses
-__main__ --o VideoService : uses
-__main__ --o Director : uses
+  Artifact <-- Actor : inherits
+  class Cast{
+    
+  }
+  Cast --> "many" Actor : contains
+  class Color{
+
+  }
+  class Point{
+    
+  }
+  class KeyboardService{
+    
+  }
+  class VideoService{
+    
+  }
+  class Director{
+    
+  }
 ```
 
 ## Required Technologies
