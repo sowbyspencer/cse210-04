@@ -65,6 +65,33 @@ class Color{
   -_alpha
   +to_tuple()Color
 }
+class Cast{
+  
+}
+class Point{
+  
+}
+class KeyboardService{
+  
+}
+class VideoService{
+  
+}
+class Director{
+  
+}
+__main__ --o Cast : creates an empty Cast
+__main__ --o Actor : creates an Actor named banner
+__main__ --o Actor : creates an Actor named robot
+__main__ --o Artifact : creates list of Artifacts
+Actor --o Color : import
+Actor --o Point : import
+Artifact --o Actor : import
+Cast --o Actor : is a list of
+KeyboardService --o Point : import
+__main__ --o KeyboardService : uses
+__main__ --o VideoService : uses
+__main__ --o Director : uses
 ```
 
 ## Required Technologies
